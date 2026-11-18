@@ -1,22 +1,26 @@
 
-var contador = 0
+let contador = 0
+let final = 0 
+
 function cargaRestanteBateria(tamanhoBateria, cargaAtual){
    
+    
     let cargaRestante = tamanhoBateria - cargaAtual;
     
-    if (cargaRestante => tamanhoBateria && cargaRestante < cargaAtual){
-        for (i= tamanhoBateria; i < cargaAtual; i = i + 3){
+    if (cargaRestante <= tamanhoBateria && cargaRestante < cargaAtual){
+        for (let i= tamanhoBateria; i <= cargaAtual; i = i + 3){
          
-             contador++
-         console.log(`Teste da bateria rodou e ganhou mais ${tamanhoBateria}, agora tem ${i}` )
-         }
+             contador = contador + 1
+             final = i
+         console.log(`Teste da bateria rodou e ganhou mais 3, agora tem ${i}` )
+         
+        }
     }
-    let final = i
-return final
+    
 }
 
-let resultado = cargaRestanteBateria(13,145)
-console.log(`A carga atual da bateria é de ${resultado}, que é a ideal.  Agora tem, OMS e ele passou ${contador} vezes no posto para `)
+let resultado = cargaRestanteBateria(75,80)
+console.log(`A carga atual da bateria é de ${final}, que é a ideal. passou ${contador} vezes no posto para carregar`)
 
 
 
